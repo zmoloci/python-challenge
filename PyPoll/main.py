@@ -18,7 +18,6 @@ with open(election_data) as csvfile:
 
     # Read the header row first (skip this step if there is now header)
     csv_header = next(csvreader)
-    print(csv_header)
 
     # Start count at 0
     count = 0
@@ -40,7 +39,7 @@ with open(election_data) as csvfile:
         # Add County
         county.append(row[1])
 
-        # Add Candidate
+        # Add Candidate if unique to uniquecandidate list
         candidate.append(row[2])
         if row[2] not in uniquecandidate:
             uniquecandidate.append(row[2])
@@ -51,16 +50,14 @@ with open(election_data) as csvfile:
         # Add votes for candidates
         uniquecanvotes[currentcandidate - 1] = int(currentcanvotes)
 
-    print(count)
-    print(uniquecandidate)
-    print(currentcandidate)
-    print(uniquecanvotes)
-
+    # Create first text list with Title and Total vote count
     text1 = ["Election Results",
              "----------------------------",
              f"Total Votes: {count}",
              "----------------------------"]
 
+    # Create second text list that will adjust number of lines based on number of unique candidates
+    # Each line includes the candidates name, their percentage share of the votes and their vote count
     text2 = []
     winnervotes = 0
     numcan = len(uniquecandidate)
@@ -73,12 +70,15 @@ with open(election_data) as csvfile:
             winner = uniquecandidate[j]
         winnervotes = uniquecanvotes[j]
 
+    # Create third text list
     text3 = ["----------------------------",
              f"Winner: {winner}",
              "----------------------------"]
 
+    # Combine all three text lists
     [text1.extend(q) for q in (text2, text3)]
 
+# Print combined output as per instructions
 for outputline in text1:
     print(outputline)
 
