@@ -61,6 +61,8 @@ If the "./Analysis/Output.txt" file does exist, it will be replaced.
 
 
 ## Repo File Contents
+- [Readme.md](https://github.com/zmoloci/python-challenge/blob/main/Readme.md)
+  - This file.
 - [PyBank/main.py](https://github.com/zmoloci/python-challenge/blob/main/PyBank/main.py)
   - Script that provides financial analysis for monthly profit/loss data   
 - [Pybank/Analysis/Output.txt](https://github.com/zmoloci/python-challenge/blob/main/PyBank/Analysis/Output.txt)
