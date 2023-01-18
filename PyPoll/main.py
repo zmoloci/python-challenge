@@ -86,7 +86,7 @@ for outputline in text1:
 outputpathdir = '/Analysis'
 outputpathf = os.path.join(outputpathdir, '/Output.txt')
 
-# Try to create the file in the Output folder within this directory.
+# Try to create the file in the Analysis folder within this directory.
 try:
     with open('./Analysis/Output.txt', 'w') as f:
         f.writelines('\n'.join(text1))

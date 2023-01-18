@@ -72,17 +72,17 @@ for outputline in text:
     print(outputline)
 
 # Export a text file with the results
-outputpathdir = '/Output'
+outputpathdir = '/Analysis'
 outputpathf = os.path.join(outputpathdir, '/Output.txt')
 
-# Try to create the file in the Output folder within this directory.
+# Try to create the file in the Analysis folder within this directory.
 try:
-    with open('./Output/Output.txt', 'w') as f:
+    with open('./Analysis/Output.txt', 'w') as f:
         f.writelines('\n'.join(text))
         f.close()
 # If the folder does not yet exist, create the folder and then create the file
 except FileNotFoundError:
-    os.mkdir('./Output')
-    with open('./Output/Output.txt', 'w') as f:
+    os.mkdir('./Analysis')
+    with open('./Analysis/Output.txt', 'w') as f:
         f.writelines('\n'.join(text))
         f.close()
